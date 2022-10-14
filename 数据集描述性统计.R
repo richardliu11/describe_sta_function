@@ -19,7 +19,7 @@ my_describe <- function(x,digit){
   return(data.frame('样本数' = N, '缺失值' = Nmiss, '最小值' = Min, '下四分位' = Q1, '中位数' = Median, '上四分位' = Q3, '最大值' = Max, '平均数' = Mean, '标准差' = Sd, '极差' = Range, '偏度' = skew,'峰度' = kurt))
 }
 
-sapply(data, my_describe,3)#usage
+des_info<-sapply(data, my_describe,3)#usage
 library(kableExtra)
 kbl(des_info,booktabs = T, caption = "数据集描述性统计表") %>%
   kable_styling(latex_options = c("striped", "hold_position"),
